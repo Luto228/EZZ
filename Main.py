@@ -5,8 +5,9 @@ print('-----------------------')
 
 que = ['А, И, О, Х, М \n что идет дальше?', '8,478,624/5,698 - 140,679/ 99', 'Вотчиноу бар доу ___ \n что идет дальше?']
 fo_que = [['Щ, а, ь','И, я', 'О, Р, П', 'ЩЩЩЩЩЩЩ'], [69, 66, 666, 67], ['Бар кекеги','Даун нененги','Танегоу итс э мани','сiкс сeveн']]
-ri_ans = ['И, я','67', 'Даун нененги']
+ri_ans = ['2','4', '2']
 money = 0
+moneysum = 100
 b = len(que)
 
 for i in range(b):
@@ -15,14 +16,17 @@ for i in range(b):
     for j in range(4):
         print(f'{j + 1}. {fo_que[i][j]}')
 
-    b = input('Ваш ответ? \n')
+    answer = input('Ваш ответ? \n')
 
-    if b == ri_ans[i]:
+    if answer == ri_ans[i]:
+        moneysum += 100
         print('ЭТО правильный ответ')
-        money += 100
+        money += moneysum
         print(f'Ваш баланс {money}')
     else:
-        print('Ужасный ответ')
+        print('ВЫ ПРОИГРАЛИ')
         print(f'у вас на балансе {money}')
+        print(f'Правильный ответ был {ri_ans[i]}')
+        break
 
     time.sleep(2)
