@@ -16,7 +16,7 @@ for i in range(b):
     for j in range(4):
         print(f'{j + 1}. {fo_que[i][j]}')
 
-    answer += input('Ваш ответ? \n')
+    answer = input('Ваш ответ? \n')
 
     if answer == ri_ans[i]:
         print('ЭТО правильный ответ')
